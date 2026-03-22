@@ -4,8 +4,10 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # 🔧 CONFIG
-EMAIL = "adammusser40@gmail.com"
-APP_PASSWORD = "uqhffqxxqeclonyw"  # ⚠️ Revoke the exposed one first, then paste new one here
+import os
+
+EMAIL = os.environ.get("EMAIL")
+APP_PASSWORD = os.environ.get("APP_PASSWORD")
 KEYWORDS = ["security", "cyber", "engineer", "analyst"]
 
 # ─────────────────────────────────────────────
