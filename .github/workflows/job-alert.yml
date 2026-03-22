@@ -1,4 +1,9 @@
-name: Daily Job Alert
+- name: Install dependencies
+      run: pip install -r requirements.txt- name: Run script
+      env:
+        EMAIL: ${{ secrets.EMAIL }}
+        APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+      run: python job_alerts.pyname: Daily Job Alert
 
 on:
   schedule:
