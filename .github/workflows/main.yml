@@ -13,6 +13,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Debug - show files
+        run: |
+          echo "CURRENT DIRECTORY:"
+          pwd
+          echo "FILES:"
+          ls -R
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -20,8 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          echo "FILES IN DIRECTORY:"
-          ls -la
           pip install -r requirements.txt
 
       - name: Run script
