@@ -1,13 +1,8 @@
-- name: Install dependencies
-      run: pip install -r requirements.txt- name: Run script
-      env:
-        EMAIL: ${{ secrets.EMAIL }}
-        APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
-      run: python job_alerts.pyname: Daily Job Alert
+name: Daily Job Alert
 
 on:
   schedule:
-    - cron: '0 13 * * *'   # runs daily (UTC)
+    - cron: '0 13 * * *'  # runs daily (UTC)
   workflow_dispatch:
 
 jobs:
